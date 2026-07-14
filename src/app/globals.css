@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  background: #fbfdff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: #0d2b5f;
+  background:
+    radial-gradient(circle at 10% 8%, rgba(232, 244, 251, 0.95), transparent 28rem),
+    radial-gradient(circle at 92% 34%, rgba(245, 236, 216, 0.65), transparent 24rem),
+    linear-gradient(180deg, #fbfdff 0%, #f4fbff 46%, #fffaf1 100%);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+.paper-grain {
+  position: relative;
+}
+
+.floral-crown {
+  position: absolute;
+  inset: 0 0 auto;
+  height: clamp(110px, 20vw, 245px);
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.floral-crown::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("/convite-detalhes.png");
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: min(760px, 112vw) auto;
+  opacity: 0.96;
+}
+
+.paper-grain::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.38;
+  background-image:
+    linear-gradient(rgba(13, 43, 95, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(13, 43, 95, 0.035) 1px, transparent 1px);
+  background-size: 34px 34px;
+  mask-image: linear-gradient(to bottom, transparent, black 18%, black 82%, transparent);
+}
+
+.gift-card {
+  transform-style: preserve-3d;
+}
+
+.gift-card:hover .gift-icon {
+  transform: translateY(-4px) rotate(-2deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
